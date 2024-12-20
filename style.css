@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", serif;
+  background-color: #121212;
+  user-select: none;
+}
+
+.navigation {
+  width: 170px;
+  background-color: #1e1e1e;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+}
+
+.navigation::before {
+  content: "MENU";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #333333;
+  transition: all 0.4s;
+  pointer-events: auto;
+}
+
+.navigation .navigation__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.navigation .navigation__list a {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0px -50px;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.navigation .navigation__list a.active,
+.navigation .navigation__list a:hover {
+  background-color: #333333;
+}
+
+.navigation.wide {
+  width: auto;
+}
+
+.navigation.wide .navigation__list a {
+  margin: 0px 10px;
+  opacity: 1;
+}
+
+.navigation.wide::before {
+  opacity: 0;
+  pointer-events: none;
+}
